@@ -102,6 +102,7 @@ If `settings.json` doesn't exist, the daemon uses `settings.defaults.json`.
 - You're not in the `input` group. Run `groups` to check. If missing: `sudo usermod -aG input $USER` then log out/in.
 
 **Recording works but no text appears in the field**
+- If running as a systemd service, ensure `WAYLAND_DISPLAY` is set in the service file (the install script does this automatically)
 - Check if `wtype` is installed: `which wtype`
 - Try pasting manually with Ctrl+V (text should be on your clipboard)
 - Set `"auto_paste": false` in settings.json to disable auto-type

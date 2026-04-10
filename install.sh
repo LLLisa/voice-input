@@ -69,6 +69,7 @@ chmod +x "$LAUNCHER"
 # -----------------------------------------------------------------------
 echo "[6/6] Installing systemd user service..."
 mkdir -p "$SERVICE_DIR"
+WAYLAND_DISPLAY="${WAYLAND_DISPLAY:-wayland-1}"
 cat > "$SERVICE_FILE" << EOF
 [Unit]
 Description=Voice Input — hold-to-speak speech-to-text daemon
@@ -76,6 +77,7 @@ After=graphical-session.target
 
 [Service]
 Type=simple
+Environment=WAYLAND_DISPLAY=$WAYLAND_DISPLAY
 ExecStart=$VENV_DIR/bin/python $SCRIPT_DIR/voice-input.py
 Restart=on-failure
 RestartSec=5

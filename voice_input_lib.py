@@ -397,7 +397,7 @@ def insert_text(text: str, settings: dict):
         log.info("Text copied to clipboard (auto-paste disabled).")
         return
 
-    # wtype: type the text via Wayland input method protocol
+    # wtype: type the text via Wayland virtual-keyboard protocol
     try:
         time.sleep(0.15)
         subprocess.run(
