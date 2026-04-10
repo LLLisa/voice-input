@@ -2,6 +2,8 @@
 
 A local, hotkey-triggered speech-to-text daemon for Wayland. Hold a key combo, speak, release — your words appear in the focused text field. No cloud APIs; everything runs on your machine.
 
+This application was written entirely by an LLM.
+
 ## Requirements
 
 - Linux with Wayland (tested on Pop!_OS / COSMIC)
